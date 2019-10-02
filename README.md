@@ -26,7 +26,7 @@
     Rect bbox=getLargestComponentByBinimage(imt);
     Mat rgbimg = rgbimg(bbox);
 	
-4.如果在window环境运行，需要配置pthread，如果在lunux环境下，ComponentLabeling.h 不用 #include "../pthread/pthread.h"，
+4.如果在window环境运行，需要配置pthread，如果在linux环境下，ComponentLabeling.h 不用 #include "../pthread/pthread.h"，
 
  # 特征提取
  
