@@ -45,13 +45,17 @@
 * **椭圆归一化圆周(ENC:elliptic-normalized circumference)**$$=\frac{EquivalentEllipsePerimeter}{Perimeter} \quad$$ 其中, EquivalentEllipsePerimeter 是肿瘤的等效椭圆周长
 
 * **凸包缺陷检测的最远点的个数和平均长度**
+
 ![](https://github.com/WenTao-Rong/Medical_Image_Feature_Extraction/raw/master/doc/Convex_Test.jpg)
+
 图中红色轮廓是肿瘤的真实轮廓, 蓝点表示凸包检测(使用opencv的convexityDefects 函数)每一个凸包缺陷区域的开始点或结束点，将这些点连起来就会得到一个凸包(绿色轮廓),红点是凸包检测返回的每个凸包缺陷区域中距离凸包最远的点（展示和实际使用的最远点的距离都大于3个像素点） 
 
 ## 内部回声特征
 
 * **肿瘤内部与外部带状区域的灰度差**
+
 ![](https://github.com/WenTao-Rong/Medical_Image_Feature_Extraction/raw/master/doc/TumorInnerOutter1.jpg)
+
 红色区域表示肿瘤内部,绿色区域表示肿瘤外部20个像素长的带状区域, 灰度差等于肿瘤外部带状区域的平均灰度-肿瘤内部的平均灰度
 
 * **GLCM特征**：能量, 对比度, 相关度, 熵 
@@ -59,7 +63,9 @@
 ## 边缘特征
 
 * **肿瘤内外带状区域的灰度差**
+
 ![](https://github.com/WenTao-Rong/Medical_Image_Feature_Extraction/raw/master/doc/TumorInnerOutter2.jpg)
+
 红色区域和绿色区域表示肿瘤内外15个像素长的带状区域, 灰度差等于肿瘤外部带状区域的平均灰度-肿瘤内带状区域的平均灰度
 
 ## 后方回声特征
