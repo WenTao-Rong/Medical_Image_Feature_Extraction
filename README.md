@@ -1,11 +1,13 @@
-#超声图像分析系统（分割，特征提取，分类）
+# 超声图像分析系统（分割，特征提取，分类）
+
  使用的框架和开发语言是 opencv 3.4.5 和c++
  * 使用GVF snake模型或深度学习模型分割
  * 提取超声图像特征，包括形状，边缘，囊实，内部回声，后方回声特征
  * 使用分类器（SVM 或逻辑回归）得到医生注重的肿瘤特征描述
  
  
- #快速开始
+ # 快速开始
+ 
 1.运行main.cpp
 2.比对结果,我的结果在./data/2.jpg提取的特征.txt 和./data/2.jpg运行结果.jpg
 3.如果结果一致,根据情况注释以下代码
@@ -23,6 +25,7 @@
     Mat rgbimg = rgbimg(bbox);
 	
 4.如果在window环境运行，需要配置pthread，如果在lunux环境下，ComponentLabeling.h 不用 #include "../pthread/pthread.h"，
+
  # 特征提取
  
 | 特征类别 | 具体特征 | 特征描述 |
@@ -33,8 +36,8 @@
 |囊实  | 囊性比例, 实性比例, 肿瘤内部平均灰度/OSTU阈值, <br>肿瘤内部灰度标准差/OSTU阈值, GLCM特征,GLRLM特征 |囊, 实, 混合|
 |边缘  | 肿瘤内外带状区域的灰度差, 肿瘤内外带状区域的类间方差  |清晰, 模糊|
 
-##形状特征
- 
+## 形状特征
+
 * **凸度** $$=\frac{ConvexPerimeter}{Perimeter} \quad$$  其中, ConvexPerimeter是肿瘤凸包的周长, Perimeter是肿瘤的周长
 
 * **坚固度（solidity）** $$=\frac{TumorArea}{ConvexArea} \quad$$ 其中, TumorArea是肿瘤的面积, ConvexArea是肿瘤凸包的面积
@@ -45,7 +48,7 @@
 ![](https://github.com/WenTao-Rong/Medical_Image_Feature_Extraction/raw/master/doc/Convex_Test.jpg)
 图中红色轮廓是肿瘤的真实轮廓, 蓝点表示凸包检测(使用opencv的convexityDefects 函数)每一个凸包缺陷区域的开始点或结束点，将这些点连起来就会得到一个凸包(绿色轮廓),红点是凸包检测返回的每个凸包缺陷区域中距离凸包最远的点（展示和实际使用的最远点的距离都大于3个像素点） 
 
-##内部回声特征
+## 内部回声特征
 
 * **肿瘤内部与外部带状区域的灰度差**
 ![](https://github.com/WenTao-Rong/Medical_Image_Feature_Extraction/raw/master/doc/TumorInnerOutter1.jpg)
@@ -53,14 +56,14 @@
 
 * **GLCM特征**：能量, 对比度, 相关度, 熵 
 
-##边缘特征
+## 边缘特征
 
 * **肿瘤内外带状区域的灰度差**
 ![](https://github.com/WenTao-Rong/Medical_Image_Feature_Extraction/raw/master/doc/TumorInnerOutter2.jpg)
 红色区域和绿色区域表示肿瘤内外15个像素长的带状区域, 灰度差等于肿瘤外部带状区域的平均灰度-肿瘤内带状区域的平均灰度
 
-##后方回声特征
+## 后方回声特征
 
-##囊实特征
+## 囊实特征
 
 
