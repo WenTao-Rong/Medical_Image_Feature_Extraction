@@ -9,7 +9,9 @@
  # 快速开始
  
 1.运行main.cpp
+
 2.比对结果,我的结果在./data/2.jpg提取的特征.txt 和./data/2.jpg运行结果.jpg
+
 3.如果结果一致,根据情况注释以下代码
 * 将busfeature.h busfeature.cpp里的void printAllFeature(string printpath)
 * busfeature.h 两个构造函数BUSFeature::BUSFeature(const char *imgpath,const contourpoint * plist,const int &plength)和 BUSFeature::BUSFeature(uchar* data,int width,int height,int format,const contourpoint *plist,const int & plength)
